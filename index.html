@@ -1,0 +1,293 @@
+
+<!-- saved from url=(0044)http://192.168.0.15:8090/dashboard/producao/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dashboard | Produção - Turnos</title>
+
+    <!-- metadados -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- links css -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- favicon -->
+    <link rel="shrtcut icon" type="image/x-icon" href="http://192.168.0.15:8090/dashboard/producao/img/favicon.ico">
+</head>
+
+<body style="font-size: 0.9em;">
+
+    <!-- Header  -->
+    <section id="header" style="font-size: 0.85em;">
+        <div class="row" style="font-weight: bold;">
+            <div class="col-2 nav-item">
+                <div onclick="window.close()">
+                    <img src="img/logo-black.png">
+                </div>
+            </div>
+            <div class="col-5 nav-item titulo text-start">
+                <p>Produção Fabrica de Borracha</p>
+            </div>
+            <div class="col-5" style="font-size: 0.85em;">
+                <div id="relogio" class="nav-item text-end no-cell" style="padding-bottom: 0.1em;">QUARTA-FEIRA - 17/12/2025 - 10:45:53</div>
+                <div class="nav-item text-end no-cell">
+                    EM PRODUÇÃO:
+                    <span id="prod_atual" class="fsc">FSC </span>
+                    OP.
+                    <span id="op_atual">003584</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="main">
+
+        <!-- Linhas de Dashboard com os dados da produção -->
+
+        <!-- DASH-LINE TOTAL POR TURNO -->
+        <div class="dash-line" style="font-size: 0.9em;">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div id="manha" class="dash-space animado">
+                        <p>Turno A</p>
+                        <div class="row">
+                            <div class="col-7 text-start">Produzido Turno:</div>
+                            <div class="col-5 text-end" id="prod_manha">      32.000</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7 text-start">Projeção Turno:</div>
+                            <div class="col-5 text-end" id="proj_manha">      33.748</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7 text-start">Meta Turno:</div>
+                            <div class="col-5 text-end" id="meta_manha">48.111</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div id="tarde" class="dash-space animado destaque">
+                        <p>Turno B</p>
+                        <div class="row">
+                            <div class="col-7 text-start">Produzido Turno:</div>
+                            <div class="col-5 text-end" id="prod_tarde">      11.875</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7 text-start">Projeção Turno:</div>
+                            <div class="col-5 text-end" id="proj_tarde">      38.692</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7 text-start">Meta Turno:</div>
+                            <div class="col-5 text-end" id="meta_tarde">52.295</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div id="noite" class="dash-space animado">
+                        <p>Turno C</p>
+                        <div class="row">
+                            <div class="col-7 text-start">Produzido Turno:</div>
+                            <div class="col-5 text-end" id="prod_noite">Não iniciado</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7 text-start">Projeção Turno:</div>
+                            <div class="col-5 text-end " id="proj_noite">Não iniciado</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7 text-start">Meta Turno:</div>
+                            <div class="col-5 text-end" id="meta_noite">50.203</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DASH-LINE TOTAL DO DIA -->
+        <div class="dash-line">
+            <div class="row">
+                <div class="col-12">
+                    <div class="dash-space animado" style="font-size: 1.22em;">
+                        <p>Resumo Diário</p>
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                Produzido Dia: &nbsp;<span class="text-center" id="prod_dia">      43.875</span>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                Projeção Dia: &nbsp;<span class="text-center" id="proj_dia">     103.404</span>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                Meta do Dia: &nbsp;<span class="text-center" id="meta_dia">150.610</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DASH LINE GRID DOS ULTIMOS DIAS E RESUMO GERAL? -->
+        <div class="dash-line">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="dash-space" style="font-size: 0.8em;">
+                        <p style="font-size: 1.2em;">Total Últimos Dias</p>
+                        <div id="ultimos_dias">
+                    <div class="row dia-anterior" id="linha_dia_1" data-referencia="1" data-data-dia="16/12/2025">
+                        <div class="col-4 offset-1 text-start" id="semana_dia_1">TERÇA-FEIRA</div>
+                        <div class="teste col-2 text-center" id="data_dia_1">16/12/2025</div>
+                        <div class="col-2 offset-1 text-end" id="produzido_dia_1">      95.775</div>
+                    </div>
+                
+                    <div class="row dia-anterior" id="linha_dia_2" data-referencia="2" data-data-dia="15/12/2025">
+                        <div class="col-4 offset-1 text-start" id="semana_dia_2">SEGUNDA-FEIRA</div>
+                        <div class="teste col-2 text-center" id="data_dia_2">15/12/2025</div>
+                        <div class="col-2 offset-1 text-end" id="produzido_dia_2">     102.050</div>
+                    </div>
+                
+                    <div class="row dia-anterior" id="linha_dia_3" data-referencia="4" data-data-dia="13/12/2025">
+                        <div class="col-4 offset-1 text-start" id="semana_dia_3">SÁBADO</div>
+                        <div class="teste col-2 text-center" id="data_dia_3">13/12/2025</div>
+                        <div class="col-2 offset-1 text-end" id="produzido_dia_3">      96.575</div>
+                    </div>
+                
+                    <div class="row dia-anterior" id="linha_dia_4" data-referencia="5" data-data-dia="12/12/2025">
+                        <div class="col-4 offset-1 text-start" id="semana_dia_4">SEXTA-FEIRA</div>
+                        <div class="teste col-2 text-center" id="data_dia_4">12/12/2025</div>
+                        <div class="col-2 offset-1 text-end" id="produzido_dia_4">     108.450</div>
+                    </div>
+                
+                    <div class="row dia-anterior" id="linha_dia_5" data-referencia="6" data-data-dia="11/12/2025">
+                        <div class="col-4 offset-1 text-start" id="semana_dia_5">QUINTA-FEIRA</div>
+                        <div class="teste col-2 text-center" id="data_dia_5">11/12/2025</div>
+                        <div class="col-2 offset-1 text-end" id="produzido_dia_5">     133.275</div>
+                    </div>
+                
+                    <div class="row dia-anterior" id="linha_dia_6" data-referencia="7" data-data-dia="10/12/2025">
+                        <div class="col-4 offset-1 text-start" id="semana_dia_6">QUARTA-FEIRA</div>
+                        <div class="teste col-2 text-center" id="data_dia_6">10/12/2025</div>
+                        <div class="col-2 offset-1 text-end" id="produzido_dia_6">     114.450</div>
+                    </div>
+                
+                    <div class="row dia-anterior" id="linha_dia_7" data-referencia="8" data-data-dia="09/12/2025">
+                        <div class="col-4 offset-1 text-start" id="semana_dia_7">TERÇA-FEIRA</div>
+                        <div class="teste col-2 text-center" id="data_dia_7">09/12/2025</div>
+                        <div class="col-2 offset-1 text-end" id="produzido_dia_7">     114.450</div>
+                    </div>
+                
+                    <div class="row dia-anterior" id="linha_dia_8" data-referencia="9" data-data-dia="08/12/2025">
+                        <div class="col-4 offset-1 text-start" id="semana_dia_8">SEGUNDA-FEIRA</div>
+                        <div class="teste col-2 text-center" id="data_dia_8">08/12/2025</div>
+                        <div class="col-2 offset-1 text-end" id="produzido_dia_8">      90.600</div>
+                    </div>
+                
+                    <div class="row dia-anterior" id="linha_dia_9" data-referencia="11" data-data-dia="06/12/2025">
+                        <div class="col-4 offset-1 text-start" id="semana_dia_9">SÁBADO</div>
+                        <div class="teste col-2 text-center" id="data_dia_9">06/12/2025</div>
+                        <div class="col-2 offset-1 text-end" id="produzido_dia_9">      85.675</div>
+                    </div>
+                
+                    <div class="row dia-anterior" id="linha_dia_10" data-referencia="12" data-data-dia="05/12/2025">
+                        <div class="col-4 offset-1 text-start" id="semana_dia_10">SEXTA-FEIRA</div>
+                        <div class="teste col-2 text-center" id="data_dia_10">05/12/2025</div>
+                        <div class="col-2 offset-1 text-end" id="produzido_dia_10">     142.675</div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="dash-space animado" style="font-size: 1em;">
+                        <p style="margin-bottom: 0.9em;">Resumo Geral</p>
+                        <div class="row">
+                            <div class="col-6 offset-1 text-start">Acumulado Mensal:</div>
+                            <div class="col-3 text-end" id="prod_mes">   1.607.750</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 offset-1 text-start">Acumulado Anual:</div>
+                            <div class="col-3 text-end" id="prod_ano">  34.265.600</div>
+                        </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- DASH LINE DETALHAMENTO DIA -->
+    <div class="dash-line" id="detalhamento" style="display: none;">
+        <div class="row">
+            <div id="dia-detalhado" class="dash-space animado">
+                <div class="row">
+                    <div id="detalhe-data">16/12/2025</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 offset-1 text-start">Total Dia:</div>
+                    <div id="detalhe-total" class="col-3 text-end">      95.775</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 offset-1 text-start">Turno A:</div>
+                    <div id="detalhe-manha" class="col-3 text-end">      42.375</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 offset-1 text-start">Turno B:</div>
+                    <div id="detalhe-tarde" class="col-3 text-end">      28.525</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 offset-1 text-start">Turno C:</div>
+                    <div id="detalhe-noite" class="col-3 text-end">      24.875</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <button class="fixed-button menu"><img src="img/menu.png" class="menu-img"></button>
+    </section>
+
+    <!-- Form Ghost -->
+    <section id="ghost">
+        <div class="form-container">
+            <h2>Informações Manuais</h2>
+            <form id="ghost-form">
+                <div class="form-group">
+                    <label for="oe">Operação Efetiva</label>
+                    <input type="text" id="oe" placeholder="0.00 até 1.00...">
+                </div>
+
+                <div class="form-group">
+                    <label for="secador">Tempo de Secador</label>
+                    <input type="text" id="secador" placeholder="Minutos...">
+                </div>
+
+                <div class="form-group">
+                    <label for="num">Número de Secadores</label>
+                    <input type="text" id="numero" placeholder="Número 1-2...">
+                </div>
+
+                <div>
+                    <button id="btnSalvar" class="form-button">Salvar</button>
+                    <button type="reset" class="form-button">Reset</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- scripts -->
+
+    <!-- Ordem de Priridade 1 -->
+    <script src="js/validador.js.baixados"></script>
+    <script src="js/semana.js.baixados"></script>
+
+    <!-- Ordem de Prioridade 2 -->
+    <script src="js/dados_view.js.baixados"></script>
+    <script src="js/detalhamento.js.baixados"></script>
+
+    <!-- Ordem de Prioridade 3 -->
+    <script src="js/ghost-form.js.baixados"></script>
+    <script src="js/expandido.js.baixados"></script>
+    <script src="js/destaque.js.baixados"></script>
+    <script src="js/relogio.js.baixados"></script>
+
+
+</body></html>
